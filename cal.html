@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result Calculator</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+</head>
+<body style="background-color: #0bf6df;">
+	<header>
+	<style>
+		.card{color: black}
+		header{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+}
+.shakil{
+    text-align: center;
+    font-size: 30px;
+}
+
+    </style>
+
+    <section>
+        
+	<div class="container">
+<div class="card">
+  <div class="card-header text-center "><h2>Student Grade Calc</h2></div>
+  <div class="card-body">
+      <form class="a w-50 m-auto" onsubmit="return false">
+        <section class="lft">
+            
+        </section>
+  		<div class="form-group">
+              
+  			<label>Web Programming</label>
+  			<input type="number" name="" placeholder="Web Programming" required id="wp" class="form-control text-center">
+  		</div>
+  		<div class="form-group">
+  			<label>Math</label>
+  			<input type="number" name="" placeholder="Math" required id="mat" class="form-control text-center">
+  		</div>
+  		<div class="form-group">
+  			<label>Computer</label>
+  			<input type="number" name="" placeholder="Computer" id="com" class="form-control text-center">
+          </div>
+          <div class="form-group">
+            <label>Physics</label>
+            <input type="number" name="" placeholder="Physics" required id="phy" class="form-control text-center">
+        </div>
+          <button class="btn btn-success" onclick="calcy()" type="submit" >Submit</button>
+      </form>
+      <div class="shakil">
+          <p id="show">   </p>
+
+      </div>
+  </div>
+  <div class="card-footer text-center">Shakil Calculator </div>
+</div>
+</div>
+</section>
+
+</header>
+<script>
+	const calcy = () =>{
+        let wp = document.getElementById('wp').value
+        let mat = document.getElementById('mat').value
+        let com = document.getElementById('com').value
+        let phy = document.getElementById('phy').value
+        let grades = ""
+
+        let tGrade = parseFloat(wp)+parseFloat(mat)+parseFloat(com)+parseFloat(phy)
+        alert(tGrade)
+
+        let perc = (tGrade/400)*100
+        alert(perc)
+
+
+        if (perc <= 100 && perc >=80){
+            grades = 'A'
+        }else if(perc <= 79 && perc >=60){
+            grades = 'B'
+        }else if (perc <= 59 && perc >=40){
+            grades = 'C'
+        }else {
+            grades = 'F'
+        }
+
+        document.getElementById('show').innerHTML=  `Out of 400 your total is ${tGrade}  and percentage is ${perc}%. <br> Your Grade is ${grades}.`
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+</body>
+</html>
